@@ -32,5 +32,14 @@ function displayBooks() {
 
 displayBooks();
 
+// Initial Query Selectors
+const addBtn = document.querySelector('#add-book');
+const inputForm = document.querySelector('#input-form');
+
+// Event Listeners
+addBtn.addEventListener('click', (e) => {
+    inputForm.classList.remove('hidden');
+});
+
 
 

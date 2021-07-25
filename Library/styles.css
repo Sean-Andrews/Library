@@ -63,3 +63,33 @@ body, html {
 Title Interface
 =========================================================*/
 
+.title {
+	font-size: 4em;
+	font-weight: 600;
+	width: 30%;
+	margin: 10% auto 0;
+}
+
+#add-book {
+	font-family: "URW Chancery L", cursive;
+	font-size: 2em;
+	display: block;
+	margin: 5% auto 0;
+	width: 12%;
+	border-radius: 8px;
+}
+
+/*========================================================
+Form to add book
+=========================================================*/
+
+#input-form {
+	font-size: 2em;
+	background: white;
+	width: 15%;
+	margin: 2% auto;
+}
+
+.hidden {
+	display: none;
+}
