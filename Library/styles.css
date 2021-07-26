@@ -67,14 +67,14 @@ Title Interface
 	font-size: 4em;
 	font-weight: 600;
 	width: 30%;
-	margin: 10% auto 0;
+	margin: 5% auto 0;
 }
 
 #add-book {
 	font-family: "URW Chancery L", cursive;
 	font-size: 2em;
 	display: block;
-	margin: 5% auto 0;
+	margin: 30px auto;
 	width: 12%;
 	border-radius: 8px;
 }
@@ -87,9 +87,41 @@ Form to add book
 	font-size: 2em;
 	background: white;
 	width: 15%;
-	margin: 2% auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
 }
 
 .hidden {
 	display: none;
+}
+
+/*=========================================================
+Library card stylings
+==========================================================*/
+
+#shelf {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+.card {
+	font-size: 2em;
+	box-sizing: border-box;
+	display: block;
+	background-color: rgb(190, 173, 158);
+	border: 1px solid black;
+	width: 30%;
+	margin: 15px;
+	border-radius: 10px;
+	
+}
+
+.card p {
+	margin: 10px auto;
+	text-align: center;
+	padding: 30px;
 }
