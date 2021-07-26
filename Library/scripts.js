@@ -1,6 +1,6 @@
 // Initial Query Selectors
 const addBookBtn = document.querySelector('#add-book');
-const inputForm = document.querySelector('#input-form');
+const inputForm = document.querySelector('.input-form');
 const shelf = document.querySelector('#shelf');
 
 let myLibrary = [];
@@ -26,7 +26,7 @@ function createCard(myLibrary = [], booksList) {
         </div>
         `;
     });
-    inputForm.classList.add('hidden');
+    //inputForm.classList.add('hidden');
 }
 
 function addBookToLibrary(book) {
@@ -46,6 +46,7 @@ function bookInfo(e) {
     };
     myLibrary.push(book);
     createCard(myLibrary, shelf);
+    inputForm.classList.add('hidden');
     // addBookToLibrary(book);
     // displayBooks();
     // inputForm.classList.add('hidden');
@@ -75,9 +76,6 @@ function displayBooks() {
         console.table(myLibrary[i]);
     }
 }
-
-
-
 
 // Event Listeners
 
