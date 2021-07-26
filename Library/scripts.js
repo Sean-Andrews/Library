@@ -1,7 +1,6 @@
 // Initial Query Selectors
 const addBookBtn = document.querySelector('#add-book');
 const inputForm = document.querySelector('#input-form');
-const submitBtn = document.querySelector('#submit-btn');
 const shelf = document.querySelector('#shelf');
 
 let myLibrary = [];
@@ -16,28 +15,49 @@ function Book(title, author, pages, read) {
     }
 }
 
-function createCard(book) {
-    let card = document.createElement("div");
-    card.classList.add('card');
-    card.innerHTML = `<p>Title: ${book.title}</p><p>Author: ${book.author}</p><p>Pages: ${book.pages}</p><p>Read: ${book.read}</p>`;
-    shelf.appendChild(card);
-
+function createCard(myLibrary = [], booksList) {
+    console.log(myLibrary);
+    booksList.innerHTML = myLibrary.map((book, i) => {
+        return `
+        <div class="card">
+            <p>Title: <label for=item${i}>${book.title}</label></p>
+            <p>Author: <label for=item${i}>${book.author}</label></p>
+            <p>Number of Pages: <label for=item${i}>${book.pages}</label></p>
+        </div>
+        `;
+    });
+    inputForm.classList.add('hidden');
 }
 
 function addBookToLibrary(book) {
-    myLibrary.push(book);
-    createCard(book);
+    // myLibrary.push(book);
+    // createCard(book);
 }
 
-function createBook() {
-    let title = inputForm.querySelector('#title').value;
-    let author = inputForm.querySelector('#author').value;
-    let pages = inputForm.querySelector('#pages').value;
-    let read = inputForm.querySelector('#read').value;
-    const newBook = new Book(title, author, pages, read);
-    addBookToLibrary(newBook);
-    displayBooks();
-    inputForm.classList.add('hidden');
+function bookInfo(e) {
+    e.preventDefault();
+    const title = (this.querySelector(`[name=title]`)).value;
+    const author = (this.querySelector(`[name=author]`)).value;
+    const pages = (this.querySelector(`[name=pages]`)).value;
+    const book = {
+        title,
+        author,
+        pages
+    };
+    myLibrary.push(book);
+    createCard(myLibrary, shelf);
+    // addBookToLibrary(book);
+    // displayBooks();
+    // inputForm.classList.add('hidden');
+
+    // let title = inputForm.querySelector('#title').value;
+    // let author = inputForm.querySelector('#author').value;
+    // let pages = inputForm.querySelector('#pages').value;
+    // let read = inputForm.querySelector('#read').value;
+    // const newBook = new Book(title, author, pages, read);
+    // addBookToLibrary(newBook);
+    // displayBooks();
+    // inputForm.classList.add('hidden');
 }
 
 const theHobbit = new Book('The Hobbit', 'J.R.R. Tokien', '295 pages', 'not read yet');
@@ -60,11 +80,14 @@ function displayBooks() {
 
 
 // Event Listeners
+
 addBookBtn.addEventListener('click', (e) => {
     inputForm.classList.remove('hidden');
 });
 
-submitBtn.addEventListener('click', createBook);
+inputForm.addEventListener('submit', bookInfo);
+
+
 
 
 
