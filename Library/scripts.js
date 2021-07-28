@@ -3,6 +3,7 @@ const addBookBtn = document.querySelector('#add-book');
 const inputForm = document.querySelector('.input-form');
 const shelf = document.querySelector('#shelf');
 
+
 let myLibrary = [];
 
 function Book(title, author, pages, read) {
@@ -16,17 +17,32 @@ function Book(title, author, pages, read) {
 }
 
 function createCard(myLibrary = [], booksList) {
-    console.log(myLibrary);
     booksList.innerHTML = myLibrary.map((book, i) => {
-        return `
-        <div class="card">
+        return`
+        <div class="card data-book${[i]}">
             <p>Title: <label for=item${i}>${book.title}</label></p>
             <p>Author: <label for=item${i}>${book.author}</label></p>
             <p>Number of Pages: <label for=item${i}>${book.pages}</label></p>
+           
         </div>
         `;
     });
-    //inputForm.classList.add('hidden');
+    let eachBook = document.getElementsByClassName('card');
+    for (i = 0; i < eachBook.length; i++) {
+        const oneBook = eachBook[i];
+        const deleteBtn = document.createElement('button');
+        deleteBtn.classList.add('delete');
+        deleteBtn.setAttribute('data', [i]);
+        deleteBtn.textContent = "Delete Book";
+        oneBook.appendChild(deleteBtn);
+        deleteBtn.addEventListener('click', deleteBook); 
+    }
+}
+
+function deleteBook(e) {
+    let index = e.target.getAttribute('data');
+    myLibrary.splice(index, 1);
+    createCard(myLibrary, shelf);
 }
 
 function addBookToLibrary(book) {
@@ -84,6 +100,8 @@ addBookBtn.addEventListener('click', (e) => {
 });
 
 inputForm.addEventListener('submit', bookInfo);
+
+
 
 
 
