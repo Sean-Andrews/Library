@@ -16,6 +16,8 @@ function Book(title, author, pages, read) {
     }
 }
 
+// Function to create card using book information
+
 function createCard(myLibrary = [], booksList) {
     booksList.innerHTML = myLibrary.map((book, i) => {
         return`
@@ -39,6 +41,8 @@ function createCard(myLibrary = [], booksList) {
     }
 }
 
+// Function for delete button
+
 function deleteBook(e) {
     let index = e.target.getAttribute('data');
     myLibrary.splice(index, 1);
@@ -55,11 +59,7 @@ function bookInfo(e) {
     const title = (this.querySelector(`[name=title]`)).value;
     const author = (this.querySelector(`[name=author]`)).value;
     const pages = (this.querySelector(`[name=pages]`)).value;
-    const book = {
-        title,
-        author,
-        pages
-    };
+    const book = new Book(title, author, pages);
     myLibrary.push(book);
     createCard(myLibrary, shelf);
     inputForm.classList.add('hidden');
