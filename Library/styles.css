@@ -51,12 +51,12 @@ table {
 Custom Styles
 ==========================================================*/
 
-body, html {
+html {
     font-size: 12px;
     font-family: "URW Chancery L", cursive;
-    background-color: #46ccb6;
-    height: 100vh;
-    width: 100vw;
+	height: 100vh;
+    background-color: #273d3a;
+	background-image: linear-gradient(to bottom right, #00fdd3, #2a3332);
 }
 
 /*=========================================================
@@ -127,7 +127,7 @@ Library card stylings
 	display: block;
 	background-color: rgb(190, 173, 158);
 	border: 1px solid black;
-	width: 30%;
+	width: 20%;
 	margin: 15px;
 	border-radius: 10px;
 	
@@ -138,3 +138,8 @@ Library card stylings
 	text-align: center;
 	padding: 30px;
 }
+
+/*============================================================
+Button stylings
+==============================================================*/
+
