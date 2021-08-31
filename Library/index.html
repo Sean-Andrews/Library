@@ -6,14 +6,19 @@
     <link type="text/css" rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <h1 class="title">My Private Library</h1>
+        <h1 class="title">My Library</h1>
+        <hr>
         <button id="add-book" type="submit">Add book</button>
         <form class="input-form hidden">
+            <h1 id="header">Add New Book</h1>
             <input class="text-field" type="text" id="title" name="title" placeholder="Title: "><br>
             <input class="text-field" type="text" id="author" name="author" placeholder="Author: "><br>
             <input class="text-field" type="text" id="pages" name="pages" placeholder="Pages: "><br> 
-            <input type="checkbox" id="read" name="read">Read?<br>   
-            <input type="submit" id="submit-btn" value="Add Book">
+            <label class="switch">
+                <input type="checkbox" id="read-toggle" class="toggle" name="read">Read?<br>   
+                <span class="slider"></span>
+            </label>
+            <input type="submit" id="submit-btn" value="Add Book to Library">
         </form>
     </div>
     

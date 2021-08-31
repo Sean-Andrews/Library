@@ -34,9 +34,9 @@ function createCard(myLibrary, bookList) {
                 <div class="card data-book${[i]}">
                 <p>Title: <label for=item${i}>${book.title}</label></p>
                 <p>Author: <label for=item${i}>${book.author}</label></p>
-                <p>Number of Pages: <label for=item${i}>${book.pages}</label></p>
-                <label for=item${i} class="switch">
-                <input for=item${i} id ="read-toggle" type="checkbox" checked>
+                <p>Pages: <label for=item${i}>${book.pages}</label></p>
+                <label for=item${i} class="read-switch">
+                <input for=item${i} class="read-toggle" type="checkbox" checked>Read<br>
                 <span for=item${i} class="slider round"></span>
                 </label>
                 </div>
@@ -46,9 +46,9 @@ function createCard(myLibrary, bookList) {
                 <div class="card data-book${[i]}">
                 <p>Title: <label for=item${i}>${book.title}</label></p>
                 <p>Author: <label for=item${i}>${book.author}</label></p>
-                <p>Number of Pages: <label for=item${i}>${book.pages}</label></p>
-                <label for=item${i} class="switch">
-                <input for=item${i} id ="read-toggle" type="checkbox">
+                <p>Pages: <label for=item${i}>${book.pages}</label></p>
+                <label for=item${i} class="read-switch">
+                <input for=item${i} class="read-toggle" type="checkbox">Read<br>
                 <span for=item${i} class="slider round"></span>
                 </label>
                 </div>
@@ -85,3 +85,4 @@ addBookBtn.addEventListener('click', (e) => {
 })
 
 inputForm.addEventListener('submit', addBookToLibrary);
+

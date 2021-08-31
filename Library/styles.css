@@ -53,10 +53,9 @@ Custom Styles
 
 html {
     font-size: 12px;
-    font-family: "URW Chancery L", cursive;
 	height: 100vh;
-    background-color: #273d3a;
-	background-image: linear-gradient(to bottom right, #00fdd3, #2a3332);
+    font-family: "Andale Mono", monospace;
+    background-color: #b1d1cd;
 }
 
 /*=========================================================
@@ -65,29 +64,46 @@ Title Interface
 
 .title {
 	font-size: 4em;
+	box-sizing: border-box;
+	color: #2f3074;
 	font-weight: 600;
-	width: 30%;
-	margin: 5% auto 0;
+	margin: 10px;
+	padding: 20px;
+	text-align: center;
 }
 
 #add-book {
-	font-family: "URW Chancery L", cursive;
 	font-size: 2em;
+	color: #2f3074;
+	background-color: rgb(224, 224, 224);
 	display: block;
 	margin: 30px auto;
 	width: 12%;
 	border-radius: 8px;
+	position: absolute;
+	top: 20px;
+	right: 50px;
 }
 
+hr {
+	border-top: 2px #2f3074 solid;
+}
 /*========================================================
 Form to add book
 =========================================================*/
 
+#header {
+	margin: 30px;
+}
+
 .input-form {
 	display: block;
 	font-size: 2em;
-	background: white;
-	width: 40%;
+	background: rgb(224, 224, 224);
+	box-sizing: border-box;
+	border: 1px solid grey;
+	box-shadow: 1px 1px 1px 1px;
+	width: 30%;
 	height: 70%;
 	position: absolute;
 	left: 0;
@@ -97,19 +113,38 @@ Form to add book
 	border-radius: 10px;
 	text-align: center;
 	vertical-align: center;
+	z-index: 2;
 }
 
 .text-field {
 	width: 70%;
 	height: 2.5em;
-	margin-top: 5%;
 	left: 50;
 	right: 0;
+	margin-bottom: 23%;
 	border-radius: 5px;
 }
 
 .hidden {
 	display: none;
+}
+
+#submit-btn {
+	position: absolute;
+	background-color: #d6e0df;
+	border-radius: 5px;
+	border: 1px solid #7aada8;
+	font-size: 14px;
+	height: 10%;
+	bottom: 8px;
+	right: 8px;
+}
+
+.switch {
+	position: absolute;
+	border-radius: 5px;
+	bottom: 20px;
+	left: 30px;
 }
 
 /*=========================================================
@@ -122,11 +157,13 @@ Library card stylings
 	justify-content: space-evenly;
 }
 .card {
-	font-size: 2em;
+	font-family: "URW Chancery L", cursive;
+	font-size: 1.8em;
 	box-sizing: border-box;
 	display: block;
 	background-color: rgb(190, 173, 158);
 	border: 1px solid black;
+	box-shadow: 0px 0px 4px black;
 	width: 20%;
 	margin: 15px;
 	border-radius: 10px;
@@ -135,7 +172,7 @@ Library card stylings
 
 .card p {
 	margin: 10px auto;
-	text-align: center;
+	text-align: left;
 	padding: 30px;
 }
 
@@ -143,3 +180,17 @@ Library card stylings
 Button stylings
 ==============================================================*/
 
+.delete {
+	background-color: rgb(163, 149, 136);
+	height: 30px;
+	position: relative;
+	float: right;
+	margin: 20px;
+	border-radius: 10px;
+}
+
+.read-switch {
+	position: relative;
+	left: 25px;
+	top: 47px;
+}
