@@ -4,7 +4,7 @@ const inputForm = document.querySelector('.input-form');
 const shelf = document.querySelector('#shelf');
 const cancelBtn = document.querySelector('#cancel');
 
-let myLibrary = [];
+let myLibrary = JSON.parse(localStorage.getItem('book')) || [];
 
 // Book constructor
 
@@ -25,6 +25,7 @@ function addBookToLibrary(e) {
     myLibrary.push(book);
     createCard(myLibrary, shelf);
     inputForm.classList.add('hidden');
+    localStorage.setItem('book', JSON.stringify(myLibrary));
 }
 
 function createCard(myLibrary, bookList) {
@@ -93,4 +94,6 @@ addBookBtn.addEventListener('click', (e) => {
 inputForm.addEventListener('submit', addBookToLibrary);
 
 cancelBtn.addEventListener('click', cancelInput);
+
+createCard(myLibrary, shelf);
 

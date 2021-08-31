@@ -130,8 +130,9 @@ Form to add book
 	border-radius: 5px;
 }
 
-.text-field:hover {
+.text-field:hover, .text-field:focus, .text-field:active {
 	box-shadow: 0px 0px 5px;
+	outline: none;
 }
 
 .hidden {
