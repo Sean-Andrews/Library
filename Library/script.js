@@ -2,6 +2,7 @@
 const addBookBtn = document.querySelector('#add-book');
 const inputForm = document.querySelector('.input-form');
 const shelf = document.querySelector('#shelf');
+const cancelBtn = document.querySelector('#cancel');
 
 let myLibrary = [];
 
@@ -36,7 +37,7 @@ function createCard(myLibrary, bookList) {
                 <p>Author: <label for=item${i}>${book.author}</label></p>
                 <p>Pages: <label for=item${i}>${book.pages}</label></p>
                 <label for=item${i} class="read-switch">
-                <input for=item${i} class="read-toggle" type="checkbox" checked>Read<br>
+                <input for=item${i} class="toggle" type="checkbox" checked>Read<br>
                 <span for=item${i} class="slider round"></span>
                 </label>
                 </div>
@@ -48,7 +49,7 @@ function createCard(myLibrary, bookList) {
                 <p>Author: <label for=item${i}>${book.author}</label></p>
                 <p>Pages: <label for=item${i}>${book.pages}</label></p>
                 <label for=item${i} class="read-switch">
-                <input for=item${i} class="read-toggle" type="checkbox">Read<br>
+                <input for=item${i} class="toggle" type="checkbox">Read<br>
                 <span for=item${i} class="slider round"></span>
                 </label>
                 </div>
@@ -57,6 +58,7 @@ function createCard(myLibrary, bookList) {
         }    
     });
     addDeleteBtn();
+    inputForm.reset();
 }
 
 function addDeleteBtn() {
@@ -78,6 +80,10 @@ function deleteBook(e) {
     createCard(myLibrary, shelf);
 }
 
+function cancelInput() {
+    inputForm.reset();
+    inputForm.classList.add('hidden');
+}
 
 
 addBookBtn.addEventListener('click', (e) => {
@@ -85,4 +91,6 @@ addBookBtn.addEventListener('click', (e) => {
 })
 
 inputForm.addEventListener('submit', addBookToLibrary);
+
+cancelBtn.addEventListener('click', cancelInput);
 
